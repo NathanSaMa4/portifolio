@@ -1,0 +1,245 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #e0e0e0;
+    padding-top: 60px; /* Espaço para o cabeçalho fixo */
+}
+
+header {
+    background: rgba(31, 31, 31, 0.8); /* Fundo com 80% opacidade */
+    color: #e0e0e0;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima do restante do conteúdo */
+    backdrop-filter: blur(10px); /* Adiciona um efeito de desfoque ao fundo */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos do perfil */
+#perfil {
+    background: linear-gradient(135deg, #333, #1e1e1e);
+    padding: 50px 0;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #bb86fc;
+}
+
+.perfil-descricao {
+    max-width: 600px;
+}
+
+.perfil-descricao h2 {
+    margin-bottom: 15px;
+}
+
+/* Estilos dos projetos em destaque e adicionais */
+#projetos-destaque, #projetos-adicionais {
+    background: #1e1e1e;
+    padding: 50px 0;
+}
+
+#projetos-destaque h2, #projetos-adicionais h2 {
+    margin-bottom: 20px;
+}
+
+.projeto {
+    background: #2c2c2c;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.projeto img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.projeto h3 {
+    margin-top: 10px;
+}
+
+.projeto p {
+    margin-bottom: 10px;
+}
+
+.projeto a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.projeto a:hover {
+    background: #bb86fc;
+    color: #121212;
+}
+
+/* Estilos para as tecnologias utilizadas */
+.tecnologias {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tecnologia {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tecnologia img {
+    width: 24px; /* Ajuste o tamanho do ícone */
+    height: 24px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tecnologia:hover .tooltip {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos do rodapé */
+footer {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .projeto {
+        padding: 10px;
+    }
+
+    .perfil-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
