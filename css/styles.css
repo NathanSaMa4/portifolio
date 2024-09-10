@@ -76,18 +76,18 @@ section {
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 .foto-perfil {
-    width: 150px;
+    background-color: #1e1e1e;
+    width: 130px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #bb86fc;
+    border: 5px solid #86d7fc;
 }
 
 .perfil-descricao {
@@ -133,7 +133,7 @@ section {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    color: #bb86fc;
+    color: #8688fc;
     border: 1px solid #bb86fc;
     padding: 5px 10px;
     border-radius: 3px;
