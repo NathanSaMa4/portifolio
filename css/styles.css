@@ -10,19 +10,19 @@ body {
     line-height: 1.6;
     background-color: #121212;
     color: #e0e0e0;
-    padding-top: 60px; /* Espaço para o cabeçalho fixo */
+    padding-top: 60px; /* Espaço para o cabeçalho fixo em telas grandes */
 }
 
 header {
     background: rgba(31, 31, 31, 0.8); /* Fundo com 80% opacidade */
     color: #e0e0e0;
     padding: 10px 0;
-    position: fixed;
+    position: fixed; /* Cabeçalho fixo por padrão */
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000; /* Garante que o cabeçalho fique acima do restante do conteúdo */
-    backdrop-filter: blur(10px); /* Adiciona um efeito de desfoque ao fundo */
+    backdrop-filter: blur(10px); /* Efeito de desfoque ao fundo */
 }
 
 header .container {
@@ -44,18 +44,23 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Espaçamento padrão entre os itens de navegação */
 }
 
 nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
+    padding: 8px 12px; /* Adicionado padding para melhorar a área clicável */
+    border-radius: 4px; /* Bordas arredondadas para os links */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #86d7fc; /* Fundo azul ao passar o mouse */
+    color: #121212; /* Texto escuro no hover */
 }
 
+/* Estilos das seções */
 section {
     padding: 20px 0;
 }
@@ -133,14 +138,15 @@ section {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    color: #8688fc;
-    border: 1px solid #bb86fc;
+    color: #86d7fc;
+    border: 1px solid #86d7fc;
     padding: 5px 10px;
     border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
 }
 
 .projeto a:hover {
-    background: #bb86fc;
+    background: #86d7fc;
     color: #121212;
 }
 
@@ -225,6 +231,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+    header {
+        position: static; /* Remove a fixação do cabeçalho em telas pequenas */
+        padding: 10px 0; /* Ajusta o espaçamento do cabeçalho */
+        background-color: #1e1e1e; /* Ajusta a cor de fundo para melhor visibilidade */
+    }
+
     header .container {
         flex-direction: column;
         align-items: center;
@@ -234,12 +246,88 @@ footer {
         margin-bottom: 10px;
     }
 
+ /* Ajustes para navegação no header */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row; /* Mantém os itens em linha */
+    justify-content: center; /* Centraliza os itens na tela */
+    gap: 10px; /* Espaçamento entre os itens */
+    padding: 10px 0; /* Adiciona espaçamento ao redor dos itens */
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
+}
+
+nav ul li a:hover {
+    background-color: #86d7fc;
+    color: #121212;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
     nav ul {
-        width: 100%;
-        text-align: center;
+        flex-direction: column; /* Organiza os itens verticalmente */
+        align-items: center;
+        gap: 20px; /* Aumenta o espaço entre os itens */
     }
 
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 12px; /* Aumenta a área de clique */
+        font-size: 18px; /* Aumenta o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        gap: 15px; /* Espaçamento entre os itens */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Tamanho menor da fonte */
+        padding: 15px 10px; /* Ajuste no padding */
+    }
+}
+
     nav ul li {
-        margin: 5px 0;
+        margin: 5px 10px; /* Melhor espaçamento entre os itens de navegação */
+    }
+
+    /* Redução de fontes e espaçamento em telas pequenas */
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 15px 0;
+    }
+
+    .perfil-info {
+        padding: 10px;
+    }
+
+    .perfil-descricao {
+        max-width: 100%;
+    }
+
+    .projeto img {
+        height: auto;
+        max-height: 180px; /* Limita o tamanho das imagens para dispositivos móveis */
+    }
+
+    .btn-contato {
+        padding: 8px 16px;
+    }
+
+    footer {
+        padding: 5px 0;
     }
 }
