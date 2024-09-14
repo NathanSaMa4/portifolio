@@ -8,9 +8,14 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Cor de fundo do modo escuro */
+    color: #e0e0e0; /* Cor do texto do modo escuro */
     padding-top: 60px; /* Espaço para o cabeçalho fixo em telas grandes */
+}
+
+body.light-mode {
+    background-color: #ffffff; /* Cor de fundo do modo claro */
+    color: #000000; /* Cor do texto do modo claro */
 }
 
 header {
@@ -23,6 +28,11 @@ header {
     left: 0;
     z-index: 1000; /* Garante que o cabeçalho fique acima do restante do conteúdo */
     backdrop-filter: blur(10px); /* Efeito de desfoque ao fundo */
+}
+
+header.light-mode {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000000;
 }
 
 header .container {
@@ -55,14 +65,28 @@ nav ul li a {
     transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
 }
 
+nav ul li a.light-mode {
+    color: #000000;
+}
+
 nav ul li a:hover {
     background-color: #86d7fc; /* Fundo azul ao passar o mouse */
     color: #121212; /* Texto escuro no hover */
 }
 
+nav ul li a.light-mode:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 /* Estilos das seções */
 section {
     padding: 20px 0;
+    background-color: #1e1e1e; /* Cor de fundo do modo escuro */
+}
+
+body.light-mode section {
+    background-color: #f0f0f0; /* Cor de fundo do modo claro */
 }
 
 .container {
@@ -330,4 +354,57 @@ nav ul li a:hover {
     footer {
         padding: 5px 0;
     }
+}
+
+#toggle-theme {
+    background: none;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px; /* Ajuste o tamanho do ícone */
+}
+
+#toggle-theme:hover {
+    background-color: #86d7fc;
+    color: #121212;
+}
+
+body.light-mode #toggle-theme {
+    border: 1px solid #000000;
+    color: #000000;
+}
+
+body.light-mode #toggle-theme:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#copy-email {
+    background: none;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px; /* Ajuste o tamanho do ícone */
+    margin-left: 10px; /* Espaçamento entre o e-mail e o botão */
+}
+
+#copy-email:hover {
+    background-color: #86d7fc;
+    color: #121212;
+}
+
+body.light-mode #copy-email {
+    border: 1px solid #000000;
+    color: #000000;
+}
+
+body.light-mode #copy-email:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
