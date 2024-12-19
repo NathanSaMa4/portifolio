@@ -1,7 +1,7 @@
 /* Reset básico */
 * {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -111,13 +111,17 @@ nav ul li a.light-mode:hover {
 
 /* Estilos das seções */
 section {
-    padding: 20px 0;
+    padding: 20px 10px;
     background-color: #1e1e1e; /* Cor de fundo do modo escuro */
     transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 body.light-mode section {
-    background-color: #f0f0f0; /* Cor de fundo do modo claro */
+    background-color: #f0f0f0; /* Cor de fundo do modo claro */   
+}
+
+body.light-mode #contato a{
+    color: #007bff;
 }
 
 .container {
@@ -181,7 +185,7 @@ body.light-mode section {
 #projetos-destaque,
 #projetos-adicionais {
     background: #1e1e1e;
-    padding: 50px 0;
+    padding: 50px 10px;
     transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
@@ -288,6 +292,10 @@ body.light-mode section {
     opacity: 1;
 }
 
+#contato a{
+    color: #86d7fc;
+}
+
 /* Estilos do rodapé */
 footer {
     background: #1f1f1f;
@@ -322,15 +330,17 @@ footer {
         flex-direction: column;
         background-color: #1e1e1ef5;
         position: absolute;
-        top: 100px; /* Alinha abaixo do cabeçalho */
-        left: 110px;
+        top: 69px; /* Alinha abaixo do cabeçalho */
+        right: -1%;
         width: 200px;
         border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 6px rgba(10, 10, 10, 0.2);
+        border: 1px solid black;
     }
 
     nav #menu.open {
         display: flex;
+        width: 20%;
     }
 
     nav #menu li {
@@ -338,7 +348,7 @@ footer {
     }
 
     nav #menu li a {
-        padding: 15px;
+        padding: 9px;
         text-align: center;
         display: block;
         color: #e0e0e0;
@@ -385,14 +395,30 @@ footer {
         margin-bottom: 10px;
     }
 
+    nav #menu {
+        flex-direction: column;
+        background-color: #1e1e1ef5;
+        position: absolute;
+        top: 100px; /* Alinha abaixo do cabeçalho */
+        right: 23%;
+        border: none;
+        font-size: medium;
+    }
+
+    nav #menu.open {
+        width: 40%;
+    }
     nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 1px;
+    }
+
+    nav #menu li a {
+        padding: 10px;
     }
 
     nav ul li a {
         font-size: 16px;
-        padding: 15px 10px;
     }
 
     .container {
@@ -428,33 +454,6 @@ body.light-mode #toggle-theme {
 }
 
 body.light-mode #toggle-theme:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-#copy-email {
-    background: none;
-    border: 1px solid #e0e0e0;
-    color: #e0e0e0;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.4s, color 0.4s;
-    font-size: 16px; /* Ajuste o tamanho do ícone */
-    margin-left: 10px; /* Espaçamento entre o e-mail e o botão */
-}
-
-#copy-email:hover {
-    background-color: #86d7fc;
-    color: #121212;
-}
-
-body.light-mode #copy-email {
-    border: 1px solid #000000;
-    color: #000000;
-}
-
-body.light-mode #copy-email:hover {
     background-color: #000000;
     color: #ffffff;
 }
